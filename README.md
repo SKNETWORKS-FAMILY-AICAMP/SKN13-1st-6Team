@@ -85,8 +85,10 @@
 - **백엔드:** Python, Mysql(db)
 - **형상관리:** GitHub
 - **개발도구:** Vscode, Mysql
-
 ---
+## 🌆 UI설계 (Figma)
+<img width="1146" alt="Image" src="https://github.com/user-attachments/assets/509b29cb-ec18-4fd3-a0eb-124aa51d3a4f" />
+
 
 ## 📊 ERD (Entity Relationship Diagram)
 
