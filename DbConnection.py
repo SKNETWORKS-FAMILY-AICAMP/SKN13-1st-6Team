@@ -44,8 +44,8 @@ class DbConnection:
                     cursor.execute(sql)
                     print("조회행수:", cursor.rowcount)
                     for row in cursor.fetchall():
-                        if len(row) < 11:
-                            row = row + ("",) * (11 - len(row))  # 부족한 필드를 빈 문자열로 채움
+                        if len(row) < 10:
+                            row = row + ("",) * (10 - len(row))  # 부족한 필드를 빈 문자열로 채움
                         #car = Car(*row)
                         car = Car(*row)
                         cars.append(car)
