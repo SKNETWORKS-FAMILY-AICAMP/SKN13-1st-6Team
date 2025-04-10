@@ -114,7 +114,7 @@ with cols[0]:
             <h4 style="margin-bottom: 8px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
                 {left_car.model}
             </h4>
-            <p>💰 <b>가격:</b> {left_car.price}만원</p>
+            <h3>💰 <b>가격:</b> {left_car.price}만원</h3>
             <p>🚗 <b>등급:</b> {left_car.car_level}</p>
             <p>⛽ <b>연료:</b> {left_car.fuel_type}</p>
             <p>⚙️ <b>엔진:</b> {left_car.engine_type}</p>
@@ -147,7 +147,7 @@ with cols[2]:
             <h4 style="margin-bottom: 8px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
                 {right_car.model}
             </h4>
-            <p>💰 <b>가격:</b> {right_car.price}만원</p>
+            <h3>💰 <b>가격:</b> {right_car.price}만원</h3>
             <p>🚗 <b>등급:</b> {right_car.car_level}</p>
             <p>⛽ <b>연료:</b> {right_car.fuel_type}</p>
             <p>⚙️ <b>엔진:</b> {right_car.engine_type}</p>
