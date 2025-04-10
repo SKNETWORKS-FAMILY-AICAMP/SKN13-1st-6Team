@@ -90,12 +90,13 @@
 
 ## 📊 ERD (Entity Relationship Diagram)
 
-![ERD](images/ERD.png)
+<img width="341" alt="Image" src="https://github.com/user-attachments/assets/baf231ae-d294-4e2a-8d15-86c6f50f2c4f" />
 
 ---
 
 ## 📋 테이블 명세
-
+<img width="814" alt="Image" src="https://github.com/user-attachments/assets/016acaf1-31fb-4002-8c68-8cfe39e94ea1" />
+<img width="816" alt="Image" src="https://github.com/user-attachments/assets/e23a6894-14e4-484b-af7c-074d628d5317" />
 
 
 
