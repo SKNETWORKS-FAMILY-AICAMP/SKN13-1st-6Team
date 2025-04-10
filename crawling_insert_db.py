@@ -44,7 +44,7 @@ def crawl_and_save_to_csv():
                 st.warning(f"[{i}] 요소 누락")
                 continue
 
-            if elements2[0].text == '-': continue
+            if elements2[0].text == '-' or elements2[0].text == '0': continue
             모델명.append(elements[0].text)
             연비.append(elements[1].text.replace('\xa0', '').replace('\t', '').replace('\n', '').replace('\r', '').replace(' ', ''))
             연료타입.append(elements[2].text.replace('\t', '').replace('\n', '').replace('\r', '').replace(' ', ''))
@@ -54,7 +54,9 @@ def crawl_and_save_to_csv():
 
             
             if len(elements2) == 3 or len(elements2) == 4:
-                price = elements2[-2].text.strip().replace(',', '') + '{:04}'.format(elements2[-1].text.strip().replace(',', ''))
+                if len(elements2[-1].text.replace(',','')) <= 1:
+                    price = elements2[-1].text.strip()+'0000'
+                else: price = elements2[-2].text.strip().replace(',', '') + '{:04}'.format(elements2[-1].text.strip().replace(',', ''))
                 가격.append(price)
             elif len(elements2) == 2:
                 if len(elements2[0].text.strip()) <= 2:
@@ -113,7 +115,6 @@ def insert_csv_to_db(file_path, df):
         ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
         """
         try:
-            hp = int(row['출력']) if pd.notna(row['출력']) and isinstance(row['출력'], (int, float)) else None
             cursor.execute(sql, (
                 row['모델명'],
                 row['연비'],
@@ -123,7 +124,7 @@ def insert_csv_to_db(file_path, df):
                 row['엔진'],
                 int(row['가격']) if pd.notna(row['가격']) and str(row['가격']).isdigit() else None,
                 row['이미지'],
-                hp
+                row['출력']
             ))
         except Exception as e:
             st.warning(f"[{idx}] DB 삽입 실패 - 모델명: {row.get('모델명', 'N/A')} / 에러: {e}")

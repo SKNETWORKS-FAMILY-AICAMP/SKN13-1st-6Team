@@ -19,7 +19,7 @@ class DbConnection:
         elif mode == "5000만원~8000만원":
             result = "WHERE price BETWEEN 5000 AND 8000"
         elif mode == "8000만원 이상":
-            result = "WHERE price >= 8000;"
+            result = "WHERE price >= 8000"
         
         #["500만원~2000만원", "2000만원~3000만원", "3000만원~5000만원", "5000만원~8000만원", "8000만원 이상"]
         
@@ -44,8 +44,8 @@ class DbConnection:
                     cursor.execute(sql)
                     print("조회행수:", cursor.rowcount)
                     for row in cursor.fetchall():
-                        if len(row) < 11:
-                            row = row + ("",) * (11 - len(row))  # 부족한 필드를 빈 문자열로 채움
+                        if len(row) < 10:
+                            row = row + ("",) * (10 - len(row))  # 부족한 필드를 빈 문자열로 채움
                         #car = Car(*row)
                         car = Car(*row)
                         cars.append(car)
