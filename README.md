@@ -34,23 +34,23 @@
 <table align="center">
   <thead>
     <td align="center">
-      <img src="images/Cristiano Ronaldo(배경).png" width=200 alt="keun"/><br />
+      <img src="https://github.com/user-attachments/assets/719dfe50-9b45-470e-bdc6-c22a57508169" width=200 alt="keun"/><br />
       <a href='https://github.com/jiyun-kang12'>강지윤</a><br />
     </td>
     <td align="center">
-      <img src="images/메시_1.png" width=200 alt="mojiho"/><br />
+      <img src="https://github.com/user-attachments/assets/289585f2-cd55-4312-9c7d-85d9a683bd42" width=200 alt="mojiho"/><br />
       <a href='https://github.com/mojiho'>모지호</a><br/>
     </td>
     <td align="center">
-      <img src="images/손흥민_1.png" width=200 alt="Jinhyeok3"/><br />
+      <img src="https://github.com/user-attachments/assets/abe3a34e-7611-43a4-8c54-10387206ab31" width=200 alt="Jinhyeok3"/><br />
       <a href='https://github.com/Jinhyeok3'>전진혁</a><br />
     </td>
     <td align="center">
-      <img src="images/음바페.png" width=200 alt="seonguihong"/><br />
+      <img src="https://github.com/user-attachments/assets/a69165a2-1064-48d6-9d63-12105fdb814c" width=200 alt="seonguihong"/><br />
       <a href='https://github.com/seonguihong'>홍성의</a><br />
     </td>
     <td align="center">
-      <img src="images/홀란드.png" width="200" alt="GrowingChoi"/><br />
+      <img src="https://github.com/user-attachments/assets/d9974423-da75-409f-96eb-0dfea434603a" width="200" alt="GrowingChoi"/><br />
       <a href='https://github.com/GrowingChoi'>최성장</a><br />
     </td>
   </thead>
