@@ -105,6 +105,10 @@ if st.session_state.index + 1 >= len(st.session_state.car):
 left_car = st.session_state.car[st.session_state.index]
 right_car = st.session_state.car[st.session_state.index + 1]
 
+# ✅None 값 처리 - 20250410 : growing 추가
+def display_value(value, unit=""):
+    return f"{value}{unit}" if value is not None else "-"
+
 cols = st.columns([5, 1, 5])
 
 with cols[0]:
@@ -116,10 +120,10 @@ with cols[0]:
             </h4>
             <h3>💰 <b>가격:</b> {left_car.price}만원</h3>
             <p>🚗 <b>등급:</b> {left_car.car_level}</p>
+            <p>🚀 <b>외형:</b> {left_car.outfit}</p>
             <p>⛽ <b>연료:</b> {left_car.fuel_type}</p>
             <p>⚙️ <b>엔진:</b> {left_car.engine_type}</p>
-            <p>💨 <b>마력:</b> {left_car.horse_power}hp</p>
-            <p>📏 <b>배기량:</b> {left_car.car_displ}cc</p>
+            <p>💨 <b>마력:</b> {display_value(left_car.horse_power)}hp</p>
             <p>🛣️ <b>연비:</b> {left_car.fuel_effic}</p>
         </div>
     """, unsafe_allow_html=True)
@@ -149,10 +153,10 @@ with cols[2]:
             </h4>
             <h3>💰 <b>가격:</b> {right_car.price}만원</h3>
             <p>🚗 <b>등급:</b> {right_car.car_level}</p>
+            <p>🚀 <b>외형:</b> {left_car.outfit}</p>
             <p>⛽ <b>연료:</b> {right_car.fuel_type}</p>
             <p>⚙️ <b>엔진:</b> {right_car.engine_type}</p>
-            <p>💨 <b>마력:</b> {right_car.horse_power}hp</p>
-            <p>📏 <b>배기량:</b> {right_car.car_displ}cc</p>
+            <p>💨 <b>마력:</b> {display_value(right_car.horse_power)}hp</p>
             <p>🛣️ <b>연비:</b> {right_car.fuel_effic}</p>
         </div>
     """, unsafe_allow_html=True)
