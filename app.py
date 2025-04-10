@@ -120,7 +120,7 @@ with cols[0]:
             <p>⚙️ <b>엔진:</b> {left_car.engine_type}</p>
             <p>💨 <b>마력:</b> {left_car.horse_power}hp</p>
             <p>📏 <b>배기량:</b> {left_car.car_displ}cc</p>
-            <p>🛣️ <b>연비:</b> {left_car.fuel_effic}km/l</p>
+            <p>🛣️ <b>연비:</b> {left_car.fuel_effic}</p>
         </div>
     """, unsafe_allow_html=True)
     st.markdown("<div style='text-align: center;'>", unsafe_allow_html=True)
@@ -153,7 +153,7 @@ with cols[2]:
             <p>⚙️ <b>엔진:</b> {right_car.engine_type}</p>
             <p>💨 <b>마력:</b> {right_car.horse_power}hp</p>
             <p>📏 <b>배기량:</b> {right_car.car_displ}cc</p>
-            <p>🛣️ <b>연비:</b> {right_car.fuel_effic}km/l</p>
+            <p>🛣️ <b>연비:</b> {right_car.fuel_effic}</p>
         </div>
     """, unsafe_allow_html=True)
     st.markdown("<div style='text-align: center;'>", unsafe_allow_html=True)
