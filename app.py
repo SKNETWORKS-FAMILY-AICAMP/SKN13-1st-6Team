@@ -1,7 +1,9 @@
 import streamlit as st
 import DbConnection as db
 import random
+import URL as ur
 import time
+
 
 # ✅ 상태 초기화
 if "entered" not in st.session_state:
@@ -107,6 +109,8 @@ if len(st.session_state.car) == 1:
             del st.session_state[key]
         st.rerun()
 
+    url = ur.get_url(final_car.model)
+    st.caption('더보기 : ' + url)
     st.stop()
 
 
@@ -140,7 +144,7 @@ with cols[0]:
             <p>🚀 <b>외형:</b> {left_car.outfit}</p>
             <p>⛽ <b>연료:</b> {left_car.fuel_type}</p>
             <p>⚙️ <b>엔진:</b> {left_car.engine_type}</p>
-            <p>💨 <b>마력:</b> {display_value(left_car.horse_power)}hp</p>
+            <p>💨 <b>마력:</b> {display_value(left_car.horse_power)}</p>
             <p>🛣️ <b>연비:</b> {left_car.fuel_effic}</p>
         </div>
     """, unsafe_allow_html=True)
@@ -173,7 +177,7 @@ with cols[2]:
             <p>🚀 <b>외형:</b> {left_car.outfit}</p>
             <p>⛽ <b>연료:</b> {right_car.fuel_type}</p>
             <p>⚙️ <b>엔진:</b> {right_car.engine_type}</p>
-            <p>💨 <b>마력:</b> {display_value(right_car.horse_power)}hp</p>
+            <p>💨 <b>마력:</b> {display_value(right_car.horse_power)}</p>
             <p>🛣️ <b>연비:</b> {right_car.fuel_effic}</p>
         </div>
     """, unsafe_allow_html=True)
