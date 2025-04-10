@@ -68,11 +68,10 @@ def crawl_and_save_to_csv():
 
             이미지.append(elements3[0].get('src'))
 
-            출력_raw = elements4[0].text.strip().replace('\t', '').replace('\n', '').replace('\r', '').replace(' ', '')
-            if '마력' not in 출력_raw and len(elements4) > 1:
-                출력_raw = elements4[1].text.strip()
-            숫자 = extract_number(출력_raw)
-            출력.append(숫자)
+            horse_p = elements4[0].text.replace('\t', '').replace('\n', '').replace('\r', '').replace(' ', '')
+            if horse_p.strip() == '-마력' and len(elements4) > 1: 
+                출력.append(elements4[1].text.replace('\t', '').replace('\n', '').replace('\r', '').replace(' ', '')) 
+            else: 출력.append(horse_p)
 
         except Exception as e:
             st.warning(f"[{i}] 에러 발생: {e}")
