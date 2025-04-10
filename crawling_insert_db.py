@@ -44,7 +44,7 @@ def crawl_and_save_to_csv():
                 st.warning(f"[{i}] 요소 누락")
                 continue
 
-            if elements2[0].text == '-': continue
+            if elements2[0].text == '-' or elements2[0].text == '0': continue
             모델명.append(elements[0].text)
             연비.append(elements[1].text.replace('\xa0', '').replace('\t', '').replace('\n', '').replace('\r', '').replace(' ', ''))
             연료타입.append(elements[2].text.replace('\t', '').replace('\n', '').replace('\r', '').replace(' ', ''))
@@ -54,7 +54,9 @@ def crawl_and_save_to_csv():
 
             
             if len(elements2) == 3 or len(elements2) == 4:
-                price = elements2[-2].text.strip().replace(',', '') + '{:04}'.format(elements2[-1].text.strip().replace(',', ''))
+                if len(elements2[-1].text.replace(',','')) <= 1:
+                    price = elements2[-1].text.strip()+'0000'
+                else: price = elements2[-2].text.strip().replace(',', '') + '{:04}'.format(elements2[-1].text.strip().replace(',', ''))
                 가격.append(price)
             elif len(elements2) == 2:
                 if len(elements2[0].text.strip()) <= 2:
