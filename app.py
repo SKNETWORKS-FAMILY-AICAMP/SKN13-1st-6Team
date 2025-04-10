@@ -1,6 +1,7 @@
 import streamlit as st
 import DbConnection as db
 import random
+import URL as ur
 
 # ✅ 상태 초기화
 if "entered" not in st.session_state:
@@ -91,6 +92,8 @@ if len(st.session_state.car) == 1:
         for key in list(st.session_state.keys()):
             del st.session_state[key]
         st.rerun()
+    url = ur.get_url(final_car.model)
+    st.caption('더보기 : ' + url)
     st.stop()
 
 # ✅ 인덱스 초과 시 다음 라운드로
@@ -118,8 +121,8 @@ with cols[0]:
             <p>🚗 <b>등급:</b> {left_car.car_level}</p>
             <p>⛽ <b>연료:</b> {left_car.fuel_type}</p>
             <p>⚙️ <b>엔진:</b> {left_car.engine_type}</p>
-            <p>💨 <b>마력:</b> {left_car.horse_power}hp</p>
-            <p>🛣️ <b>연비:</b> {left_car.fuel_effic}km/l</p>
+            <p>💨 <b>마력:</b> {left_car.horse_power}</p>
+            <p>🛣️ <b>연비:</b> {left_car.fuel_effic}</p>
         </div>
     """, unsafe_allow_html=True)
     st.markdown("<div style='text-align: center;'>", unsafe_allow_html=True)
@@ -150,8 +153,8 @@ with cols[2]:
             <p>🚗 <b>등급:</b> {right_car.car_level}</p>
             <p>⛽ <b>연료:</b> {right_car.fuel_type}</p>
             <p>⚙️ <b>엔진:</b> {right_car.engine_type}</p>
-            <p>💨 <b>마력:</b> {right_car.horse_power}hp</p>
-            <p>🛣️ <b>연비:</b> {right_car.fuel_effic}km/l</p>
+            <p>💨 <b>마력:</b> {right_car.horse_power}</p>
+            <p>🛣️ <b>연비:</b> {right_car.fuel_effic}</p>
         </div>
     """, unsafe_allow_html=True)
     st.markdown("<div style='text-align: center;'>", unsafe_allow_html=True)
