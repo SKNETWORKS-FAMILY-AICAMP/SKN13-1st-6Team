@@ -113,7 +113,6 @@ def insert_csv_to_db(file_path, df):
         ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
         """
         try:
-            hp = int(row['출력']) if pd.notna(row['출력']) and isinstance(row['출력'], (int, float)) else None
             cursor.execute(sql, (
                 row['모델명'],
                 row['연비'],
@@ -123,7 +122,7 @@ def insert_csv_to_db(file_path, df):
                 row['엔진'],
                 int(row['가격']) if pd.notna(row['가격']) and str(row['가격']).isdigit() else None,
                 row['이미지'],
-                hp
+                row['출력']
             ))
         except Exception as e:
             st.warning(f"[{idx}] DB 삽입 실패 - 모델명: {row.get('모델명', 'N/A')} / 에러: {e}")
