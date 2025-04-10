@@ -78,7 +78,14 @@
 ### **신차 정보 데이터** 🚗
 - **출처:** [카이즈유](https://www.carisyou.com/car/) 
 - **수집 방법:** 위 웹사이트에서 **크롤링**을 통해 신차의 **차량ID**, **연비**, **연료타입**, **차급**, **외형**, **엔진**, **출력**, **이미지** 데이터를 가져왔습니다.
----
+
+
+- **마주한 역경과고난** <br>
+html의 자유로운 구조, 웹사이트 마다 구조가 달랐기에 크롤링을 하는데 있어서 굉장히 어려움을 느꼈지만, <br>
+
+
+팀원들과 같이 html구조를 보다 세심하게 뜯어보며 attribute(속성)에 대한 이해도를 높여서 결국에 크롤링을 성공했습니다. <br>
+
 
 ## 🛠 기술 스택
 - **프론트엔드:** Python, Streamlit
@@ -92,15 +99,16 @@
 
 ## 📊 ERD (Entity Relationship Diagram)
 
+
 <img width="341" alt="Image" src="https://github.com/user-attachments/assets/baf231ae-d294-4e2a-8d15-86c6f50f2c4f" />
 
+
 ---
+
 
 ## 📋 테이블 명세
 <img width="814" alt="Image" src="https://github.com/user-attachments/assets/016acaf1-31fb-4002-8c68-8cfe39e94ea1" />
 <img width="816" alt="Image" src="https://github.com/user-attachments/assets/e23a6894-14e4-484b-af7c-074d628d5317" />
-
-
 
 
 
