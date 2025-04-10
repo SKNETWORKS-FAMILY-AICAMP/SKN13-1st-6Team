@@ -114,13 +114,13 @@ with cols[0]:
             <h4 style="margin-bottom: 8px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
                 {left_car.model}
             </h4>
+            <p>💰 <b>가격:</b> {left_car.price}만원</p>
             <p>🚗 <b>등급:</b> {left_car.car_level}</p>
             <p>⛽ <b>연료:</b> {left_car.fuel_type}</p>
             <p>⚙️ <b>엔진:</b> {left_car.engine_type}</p>
             <p>💨 <b>마력:</b> {left_car.horse_power}hp</p>
             <p>📏 <b>배기량:</b> {left_car.car_displ}cc</p>
             <p>🛣️ <b>연비:</b> {left_car.fuel_effic}km/l</p>
-            <p>💰 <b>가격:</b> {left_car.price}만원</p>
         </div>
     """, unsafe_allow_html=True)
     st.markdown("<div style='text-align: center;'>", unsafe_allow_html=True)
