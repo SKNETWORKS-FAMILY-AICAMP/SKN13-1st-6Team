@@ -2,6 +2,8 @@ import streamlit as st
 import DbConnection as db
 import random
 import URL as ur
+import time
+
 
 # ✅ 상태 초기화
 if "entered" not in st.session_state:
@@ -65,36 +67,52 @@ if st.session_state.get("show_price_select", False) and "selected_price" not in 
         "가격 범위 선택",
         ["500만원~2000만원", "2000만원~3000만원", "3000만원~5000만원", "5000만원~8000만원", "8000만원 이상"]
     )
+    connnn = db.DbConnection() 
+    res = connnn.select_all_data(selected) 
 
+    # 선택 완료 버튼
     if st.button("선택 완료"):
-        st.session_state.selected_price = selected
-        st.session_state.show_price_select = False
-        st.rerun()
-
+        if len(res) < 16:
+            st.warning("🚗 해당 가격대의 차량 수가 충분하지 않습니다! 다른 가격대를 골라주세요.", icon="⚠️")
+        else:
+            st.session_state.selected_price = selected
+            st.session_state.show_price_select = False
+            st.rerun()
     st.stop()
 
-# ✅ Step 4: 월드컵 시작 전 초기화
+#✅ Step 4: 월드컵 시작 전 초기화
 if "round" not in st.session_state:
     st.session_state.round = 1
     connnn = db.DbConnection() 
     res = connnn.select_all_data(st.session_state.selected_price)
-    st.session_state.car = random.sample(res, 16)  # 리스트 내 Car 객체들
+    # 차량 수 충분할 경우 정상적으로 진행
+    st.session_state.car = random.sample(res, 16)
     st.session_state.winners = []
     st.session_state.index = 0
 
 # ✅ 종료 조건
 if len(st.session_state.car) == 1:
+    connnn = db.DbConnection() 
     st.title("🏆 이상형 월드컵 결과")
     final_car = st.session_state.car[0]
     st.success(f"🎉 당신의 이상형은: {final_car.model} ({final_car.price}만원)")
     st.image(final_car.img_url, width=400)
+
+    # ✅ insert 중복 방지를 위한 플래그 확인
+    if "winner_saved" not in st.session_state or not st.session_state.winner_saved:
+        winner_info = connnn.insert_winner_info(final_car)
+        st.session_state.winner_saved = True
+        st.write("DB 저장 결과:", winner_info)
+
     if st.button("다시 시작하기"):
         for key in list(st.session_state.keys()):
             del st.session_state[key]
         st.rerun()
+
     url = ur.get_url(final_car.model)
     st.caption('더보기 : ' + url)
     st.stop()
+
 
 # ✅ 인덱스 초과 시 다음 라운드로
 if st.session_state.index + 1 >= len(st.session_state.car):
@@ -108,6 +126,10 @@ if st.session_state.index + 1 >= len(st.session_state.car):
 left_car = st.session_state.car[st.session_state.index]
 right_car = st.session_state.car[st.session_state.index + 1]
 
+# ✅None 값 처리 - 20250410 : growing 추가
+def display_value(value, unit=""):
+    return f"{value}{unit}" if value is not None else "-"
+
 cols = st.columns([5, 1, 5])
 
 with cols[0]:
@@ -117,11 +139,12 @@ with cols[0]:
             <h4 style="margin-bottom: 8px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
                 {left_car.model}
             </h4>
-            <p>💰 <b>가격:</b> {left_car.price}만원</p>
+            <h3>💰 <b>가격:</b> {left_car.price}만원</h3>
             <p>🚗 <b>등급:</b> {left_car.car_level}</p>
+            <p>🚀 <b>외형:</b> {left_car.outfit}</p>
             <p>⛽ <b>연료:</b> {left_car.fuel_type}</p>
             <p>⚙️ <b>엔진:</b> {left_car.engine_type}</p>
-            <p>💨 <b>마력:</b> {left_car.horse_power}</p>
+            <p>💨 <b>마력:</b> {display_value(left_car.horse_power)}</p>
             <p>🛣️ <b>연비:</b> {left_car.fuel_effic}</p>
         </div>
     """, unsafe_allow_html=True)
@@ -149,11 +172,12 @@ with cols[2]:
             <h4 style="margin-bottom: 8px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
                 {right_car.model}
             </h4>
-            <p>💰 <b>가격:</b> {right_car.price}만원</p>
+            <h3>💰 <b>가격:</b> {right_car.price}만원</h3>
             <p>🚗 <b>등급:</b> {right_car.car_level}</p>
+            <p>🚀 <b>외형:</b> {left_car.outfit}</p>
             <p>⛽ <b>연료:</b> {right_car.fuel_type}</p>
             <p>⚙️ <b>엔진:</b> {right_car.engine_type}</p>
-            <p>💨 <b>마력:</b> {right_car.horse_power}</p>
+            <p>💨 <b>마력:</b> {display_value(right_car.horse_power)}</p>
             <p>🛣️ <b>연비:</b> {right_car.fuel_effic}</p>
         </div>
     """, unsafe_allow_html=True)

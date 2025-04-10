@@ -19,7 +19,7 @@ class DbConnection:
         elif mode == "5000만원~8000만원":
             result = "WHERE price BETWEEN 5000 AND 8000"
         elif mode == "8000만원 이상":
-            result = "WHERE price >= 8000;"
+            result = "WHERE price >= 8000"
         
         #["500만원~2000만원", "2000만원~3000만원", "3000만원~5000만원", "5000만원~8000만원", "8000만원 이상"]
         
@@ -55,3 +55,62 @@ class DbConnection:
             return None
 
         return cars
+    
+
+    def insert_winner_info(self, car: Car) -> str:
+        result = "fail"
+        
+        try:
+            # DB 커넥션
+            conn = pymysql.connect(
+                host=self.host,
+                port=3306,
+                user=self.uid,
+                password=self.pw,
+                db=self.db_name,
+                charset='utf8mb4',
+                cursorclass=pymysql.cursors.Cursor
+            )
+
+            with conn:
+                with conn.cursor() as cursor:
+                    # 1. 기존에 해당 car_id가 있는지 확인
+                    select_sql = "SELECT win_log FROM winner_info WHERE car_id = %s"
+                    cursor.execute(select_sql, (car.car_id,))
+                    existing = cursor.fetchone()
+
+                    if existing:
+                        # 2. 이미 있다면 win_log 1 증가시켜 업데이트
+                        new_win_log = existing[0] + 1
+                        update_sql = """
+                        UPDATE winner_info
+                        SET win_log = %s
+                        WHERE car_id = %s
+                        """
+                        cursor.execute(update_sql, (new_win_log, car.car_id))
+                    else:
+                        # 3. 없다면 새로 insert (win_log = 1)
+                        insert_sql = """
+                        INSERT INTO winner_info (
+                            car_id, model, img_url, price, outfit, win_log
+                        ) VALUES (
+                            %s, %s, %s, %s, %s, %s
+                        )
+                        """
+                        cursor.execute(insert_sql, (
+                            getattr(car, 'car_id', None),
+                            getattr(car, 'model', None),
+                            getattr(car, 'img_url', None),
+                            getattr(car, 'price', None),
+                            getattr(car, 'outfit', ""),
+                            1
+                        ))
+
+                    conn.commit()
+                    result = "success"
+
+        except pymysql.MySQLError as e:
+            print("DB 오류:", e)
+            return None
+
+        return result
