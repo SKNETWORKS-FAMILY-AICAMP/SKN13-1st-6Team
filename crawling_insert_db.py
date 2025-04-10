@@ -24,7 +24,7 @@ def crawl_and_save_to_csv():
     모델명 = []; 연비 = []; 연료타입 = []; 차급 = []; 외형 = []; 엔진 = []
     가격 = []; 이미지 = []; 출력 = []
 
-    for i in range(7539, 6520, -1):
+    for i in range(7576, 4000, -1):
         try:
             url = f'https://www.carisyou.com/car/{i}/Spec'
             response = requests.get(url)
@@ -37,29 +37,28 @@ def crawl_and_save_to_csv():
             elements2 = parser.select('div.car_info > h4 > span')
             elements3 = parser.select('#container > div:nth-child(3) > div > div.car_detail_top > div.car_detail > div.car_gallery > p > img')
             elements4 = parser.select('#carInfo > div:nth-child(4) > div > div.table_box_left > table > tbody > tr:nth-child(2) > td,\
-                                      #carInfo > div:nth-child(4) > div > div.table_box_right > table > tbody > tr:nth-child(7) > td')
+                                      #carInfo > div:nth-child(4) > div > div.table_box_right > table > tbody > tr:nth-child(7) > td,\
+                                      #carInfo > div:nth-child(4) > div > div.table_box_right > table > tbody > tr:nth-child(5) > td')
 
             if not (elements and elements2 and elements3 and elements4):
                 st.warning(f"[{i}] 요소 누락")
                 continue
 
-            if elements2[0].text.strip() == '-':
-                continue
-
-            모델명.append(elements[0].text.strip())
-            연비.append(elements[1].text.strip().replace('\xa0', ''))
-            연료타입.append(elements[2].text.strip())
-            차급.append(elements[3].text.strip())
-            외형.append(elements[4].text.strip().replace('\t', '').replace('\n', '').replace('\r', '').replace(' ', ''))
-            엔진.append(elements[5].text.strip().replace('\t', '').replace('\n', '').replace('\r', '').replace(' ', ''))
+            if elements2[0].text == '-': continue
+            모델명.append(elements[0].text)
+            연비.append(elements[1].text.replace('\xa0', '').replace('\t', '').replace('\n', '').replace('\r', '').replace(' ', ''))
+            연료타입.append(elements[2].text.replace('\t', '').replace('\n', '').replace('\r', '').replace(' ', ''))
+            차급.append(elements[3].text.replace('\t', '').replace('\n', '').replace('\r', '').replace(' ', ''))
+            외형.append(elements[4].text.replace('\t', '').replace('\n', '').replace('\r', '').replace(' ', ''))
+            엔진.append(elements[5].text.replace('\t', '').replace('\n', '').replace('\r', '').replace(' ', ''))
 
             
             if len(elements2) == 3 or len(elements2) == 4:
-                price = elements2[-2].text.strip().replace(',', '') + elements2[-1].text.strip().replace(',', '')
+                price = elements2[-2].text.strip().replace(',', '') + '{:04}'.format(elements2[-1].text.strip().replace(',', ''))
                 가격.append(price)
             elif len(elements2) == 2:
                 if len(elements2[0].text.strip()) <= 2:
-                    price = elements2[0].text.strip().replace(',', '') + elements2[1].text.strip().replace(',', '')
+                    price = elements2[0].text.strip().replace(',', '') + '{:04}'.format(elements2[-1].text.strip().replace(',', ''))
                     가격.append(price)
                 else:
                     가격.append(elements2[1].text.strip().replace(',', ''))
@@ -70,7 +69,7 @@ def crawl_and_save_to_csv():
 
             horse_p = elements4[0].text.replace('\t', '').replace('\n', '').replace('\r', '').replace(' ', '')
             if horse_p.strip() == '-마력' and len(elements4) > 1: 
-                출력.append(elements4[1].text.replace('\t', '').replace('\n', '').replace('\r', '').replace(' ', '')) 
+                출력.append(elements4[-1].text.replace('\t', '').replace('\n', '').replace('\r', '').replace(' ', '')) 
             else: 출력.append(horse_p)
 
         except Exception as e:
