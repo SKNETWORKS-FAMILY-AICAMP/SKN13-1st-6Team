@@ -28,7 +28,7 @@ def crawl_and_save_to_csv():
         try:
             url = f'https://www.carisyou.com/car/{i}/Spec'
             response = requests.get(url)
-            time.sleep(1)
+            time.sleep(0.1)
             response.raise_for_status()
             parser = BeautifulSoup(response.text, 'lxml')
 
