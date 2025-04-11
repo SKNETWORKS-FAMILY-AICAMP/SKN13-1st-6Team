@@ -38,7 +38,7 @@
       <a href='https://github.com/jiyun-kang12'>강지윤</a><br />
     </td>
     <td align="center">
-      <img src="https://github.com/user-attachments/assets/15564914-0659-415c-b960-3b432cabbf76" width=200 alt="mojiho"/><br />
+      <img src="https://github.com/user-attachments/assets/704ffbf8-e5cb-407d-b680-d8f298a030d1" width=200 alt="mojiho"/><br />
       <a href='https://github.com/mojiho'>모지호</a><br/>
     </td>
     <td align="center">
