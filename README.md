@@ -98,7 +98,7 @@
 - **프론트엔드:** Python, Streamlit
 - **백엔드:** Python, Mysql(db)
 - **형상관리:** GitHub
-- **개발도구:** Vscode, Mysql
+- **개발도구:** Vscode, Mysql, SourceTree
 ---
 ## 🌆 UI설계 (Figma)
 <img width="1146" alt="Image" src="https://github.com/user-attachments/assets/509b29cb-ec18-4fd3-a0eb-124aa51d3a4f" />
