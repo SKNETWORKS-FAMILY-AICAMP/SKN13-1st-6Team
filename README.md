@@ -57,6 +57,8 @@
    </thead>
  </table>
  ---
+
+ 
 # 🛠 기술 스택
  - **프론트엔드:** Python, Streamlit
  - **백엔드:** Python, Mysql(db)
