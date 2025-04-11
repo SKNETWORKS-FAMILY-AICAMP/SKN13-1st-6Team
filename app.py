@@ -213,7 +213,8 @@ if st.session_state.show_dev_page:
     st.title("🧑🏻‍💻 DEVELOPERS 소개")
 
     profiles = [
-        {"name": "지윤", "img": "https://github.com/user-attachments/assets/719dfe50-9b45-470e-bdc6-c22a57508169", "desc": "자기소개"},
+        {"name": "지윤", "img": "https://github.com/user-attachments/assets/719dfe50-9b45-470e-bdc6-c22a57508169", 
+         "desc": "Olá, meu nome é Jiyoon. Na verdade, eu sou coreana. Mas estou usando este idioma porque o Cristiano Ronaldo é português. Tornar-me alguém que está sempre em destaque é o meu sonho. Então, continue acompanhando minha jornada~!"},
         {"name": "지호", "img": "https://github.com/user-attachments/assets/704ffbf8-e5cb-407d-b680-d8f298a030d1", 
          "desc": "자기소개\nAhoj, jsem Mo Jiho.\nMám rád baseball, tenis a fotbal.\nV korejském baseballu fandím týmu Hanwha, bohužel. 😢"},
         {"name": "진혁", "img": "https://github.com/user-attachments/assets/abe3a34e-7611-43a4-8c54-10387206ab31", 
