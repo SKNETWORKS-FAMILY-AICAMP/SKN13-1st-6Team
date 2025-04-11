@@ -181,8 +181,14 @@ if st.session_state.get("show_price_select", False) and "selected_price" not in 
 
     selected = st.selectbox(
         "가격 범위 선택",
-        ["500만원~2000만원", "2000만원~3000만원", "3000만원~5000만원", "5000만원~8000만원", "8000만원 이상"]
+        ["0만원~3000만원",
+        "3000만원~5000만원",
+        "5000만원~7000만원",
+        "7000만원~1억원",
+        "1억원~2억원",
+        "2억원이상"]
     )
+
     connnn = db.DbConnection() 
     res = connnn.select_all_data(selected) 
 
