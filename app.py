@@ -209,7 +209,8 @@ if st.session_state.show_dev_page:
          "desc": "자기소개\nAhoj, jsem Mo Jiho.\nMám rád baseball, tenis a fotbal.\nV korejském baseballu fandím týmu Hanwha, bohužel. 😢"},
         {"name": "진혁", "img": "https://github.com/user-attachments/assets/abe3a34e-7611-43a4-8c54-10387206ab31", "desc": "자기소개"},
         {"name": "성의", "img": "https://github.com/user-attachments/assets/a69165a2-1064-48d6-9d63-12105fdb814c", "desc": "자기소개"},
-        {"name": "성장", "img": "https://github.com/user-attachments/assets/d9974423-da75-409f-96eb-0dfea434603a", "desc": "자기소개"},
+        {"name": "성장", "img": "https://github.com/user-attachments/assets/d9974423-da75-409f-96eb-0dfea434603a", 
+         "desc": "자기소개 \n Hei! Jeg heter Seongjang Choi.  På fritiden liker jeg å trene – egentlig liker jeg nesten all slags sport, bortsett fra biljard 😅  Jeg er ikke så flink, men jeg har det gøy uansett!  Jeg synes også programmering er ganske gøy.  Så hvis du har problemer med koding, bare kom og spør meg!"},
     ]
 
     for profile in profiles:
