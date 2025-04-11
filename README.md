@@ -72,7 +72,8 @@
 <img width="470" alt="Image" src="https://github.com/user-attachments/assets/916fbddf-971d-464e-be57-a8391345dbd1" />
 
 ✨Step 4.<br>
-최종 자동차 이상형 발표!
+최종 자동차 이상형 발표! <br>
+<img width="470" alt="Image" src="https://github.com/user-attachments/assets/7544c1e4-4d85-4f20-b42a-3b5d5c981778" />
 
 ✨Step 5.<br>
 내가 선택한 자동차의 랭킹을 보고 싶다면 홈에서 "역대 우승차량 보기" 버튼을 클린하신 후, 가격도 조정해서 보실 수 있습니다! <br>
