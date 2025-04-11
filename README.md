@@ -61,12 +61,24 @@
 
 ✨Step 1. <br>
 월드컵 사이트(url: )에 접속하신 후, 게임을 시작하려면 가장 "Game Start" 버튼을 클릭해주세요!<br>
+<img width="470" alt="Image" src="https://github.com/user-attachments/assets/2ab44621-1b48-4eb4-b765-7f3d05dceaa0" />
+
 ✨Step 2.<br>
 게임 스타트로 넘어가면 가격을 조정할 수 있는 드롭다운 버튼이 있습니다. 원하시는 가격대로 조정해주세요!<br>
+<img width="500" alt="Image" src="https://github.com/user-attachments/assets/32193593-cc82-4e39-b875-703dc30221f1" />
+
 ✨Step 3.<br>
 게임 시작! > 월드컵은 총 16강으로 진행되며 자동차의 정보들을 비교하신 후에 원하시는 자동차 클릭<br>
+<img width="470" alt="Image" src="https://github.com/user-attachments/assets/916fbddf-971d-464e-be57-a8391345dbd1" />
+
 ✨Step 4.<br>
 최종 자동차 이상형 발표!
+
+✨Step 5.<br>
+내가 선택한 자동차의 랭킹을 보고 싶다면 홈에서 "역대 우승차량 보기" 버튼을 클린하신 후, 가격도 조정해서 보실 수 있습니다! <br>
+<img width="400" alt="Image" src="https://github.com/user-attachments/assets/c3b3b736-e532-43a7-92df-a9d5b377937c" /> <img width="400" alt="Image" src="https://github.com/user-attachments/assets/6ffdbd61-0d3d-4447-a0ec-6ae7d13c4569" />
+
+
 
 ---
 
