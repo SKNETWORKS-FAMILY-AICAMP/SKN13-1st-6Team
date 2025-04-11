@@ -8,7 +8,7 @@ service = Service(executable_path=ChromeDriverManager().install())
 option = webdriver.ChromeOptions()
 option.add_argument('--headless')
 browser = webdriver.Chrome(service=service, options=option)
-browser.implicitly_wait(0.5)
+browser.implicitly_wait(1)
 
 def get_url(model:str):
     """
