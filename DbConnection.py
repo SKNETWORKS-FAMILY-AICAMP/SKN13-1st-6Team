@@ -22,17 +22,11 @@ class DbConnection:
             result = "WHERE price BETWEEN 10000 AND 20000"
         elif mode == "20000만원 이상":
             result = "WHERE price >= 20000"
-        #         ["0만원~3000만원",
-        # "3000만원~5000만원",
-        # "5000만원~7000만원",
-        # "7000만원~1억원",
-        # "1억원~2억원",
-        # "2억원이상"]
-
 
 
         
-        sql = "SELECT * FROM car_info " + result + " AND img_url IS NOT NULL AND img_url != '' "
+        sql = "SELECT * FROM car_info " + result    
+      # + " AND img_url IS NOT NULL AND img_url != '' "
 
         cars = []
 
