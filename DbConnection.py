@@ -25,8 +25,7 @@ class DbConnection:
             result = "WHERE price >= 20000"
 
 
-        sql = "SELECT * FROM car_info " + result    
-      # + " AND img_url IS NOT NULL AND img_url != '' "
+        sql = "SELECT * FROM car_info " + result + " AND img_url IS NOT NULL AND img_url != '' "
 
         cars = []
 
