@@ -205,7 +205,8 @@ if st.session_state.show_dev_page:
 
     profiles = [
         {"name": "지윤", "img": "https://github.com/user-attachments/assets/719dfe50-9b45-470e-bdc6-c22a57508169", "desc": "자기소개"},
-        {"name": "지호", "img": "https://github.com/user-attachments/assets/704ffbf8-e5cb-407d-b680-d8f298a030d1", "desc": "자기소개"},
+        {"name": "지호", "img": "https://github.com/user-attachments/assets/704ffbf8-e5cb-407d-b680-d8f298a030d1", 
+         "desc": "자기소개\nAhoj, jsem Mo Jiho.\nMám rád baseball, tenis a fotbal.\nV korejském baseballu fandím týmu Hanwha, bohužel. 😢"},
         {"name": "진혁", "img": "https://github.com/user-attachments/assets/abe3a34e-7611-43a4-8c54-10387206ab31", "desc": "자기소개"},
         {"name": "성의", "img": "https://github.com/user-attachments/assets/a69165a2-1064-48d6-9d63-12105fdb814c", "desc": "자기소개"},
         {"name": "성장", "img": "https://github.com/user-attachments/assets/d9974423-da75-409f-96eb-0dfea434603a", "desc": "자기소개"},
@@ -213,7 +214,8 @@ if st.session_state.show_dev_page:
 
     for profile in profiles:
         st.image(profile["img"], width=200, caption=profile["name"])
-        st.markdown(f"**{profile['desc']}**")
+        formatted_desc = profile["desc"].replace("\n", "<br>")
+        st.markdown(f"{formatted_desc}", unsafe_allow_html=True)
         st.markdown("---")  # 구분선
 
     if st.button("🏠 홈으로 돌아가기"):
@@ -222,6 +224,7 @@ if st.session_state.show_dev_page:
         st.rerun()
 
     st.stop()
+
 
 
 #✅ Step 4: 월드컵 시작 전 초기화
