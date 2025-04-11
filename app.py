@@ -25,18 +25,21 @@ if not st.session_state.entered and not st.session_state.show_intro_page and not
     btn_cols = st.columns(3)
 
     with btn_cols[0]:
+        st.image("https://github.com/user-attachments/assets/9d041e15-8185-4f7c-aa9a-b6cccaf274f1", width=190)
         if st.button("👑 CarWorldCup start!"):
             st.session_state.entered = True
             st.session_state.show_price_select = True
             st.rerun()
 
     with btn_cols[1]:
+        st.image("https://github.com/user-attachments/assets/5af7745b-1813-4384-9d74-4047e2333e4e", width=190)
         if st.button("📊 역대 우승차량 보기"):
             st.session_state.show_intro_page = True
             st.rerun()
 
     with btn_cols[2]:
-        if st.button(" 🧑🏻‍💻DEVELOPERS 소개"):
+        st.image("https://github.com/user-attachments/assets/f03fb64c-d876-467a-866c-592b54a391eb", width=190)
+        if st.button(" 🧑🏻‍💻 DEVELOPERS 소개 "):
             st.session_state.show_dev_page = True
             st.rerun()
 
