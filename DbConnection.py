@@ -23,7 +23,7 @@ class DbConnection:
         
         #["500만원~2000만원", "2000만원~3000만원", "3000만원~5000만원", "5000만원~8000만원", "8000만원 이상"]
         
-        sql = "SELECT * FROM car_info " + result
+        sql = "SELECT * FROM car_info " + result + " AND img_url IS NOT NULL AND img_url != '' "
 
         cars = []
 
