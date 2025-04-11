@@ -127,10 +127,24 @@ if st.session_state.show_intro_page:
             st.warning("⚠️ 해당 가격대에 우승 기록이 있는 차량이 없습니다.")
             st.stop()
 
-        # ✅ Altair 시각화
-        bar = alt.Chart(df).mark_bar(cornerRadiusTopLeft=5, cornerRadiusBottomLeft=5).encode(
-            y=alt.Y('model:N', sort='-x', title=None, axis=alt.Axis(labelFontSize=13)),
-            x=alt.X('win_log:Q', title='우승 횟수'),
+        sorted_models = df.sort_values('win_log', ascending=False)['model'].tolist()
+
+        # ✅ 1. 문자열 공백 제거
+        df['model'] = df['model'].str.strip()
+
+        # ✅ 2. 중복 모델 제거 (같은 차량명이 여러 번 들어가는 경우 방지)
+        df = df.drop_duplicates(subset='model')
+
+        # 🔁 또는 그룹핑이 필요하면 아래로 대체 가능
+        # df = df.groupby('model', as_index=False).agg({'win_log': 'max'})  # 또는 sum
+
+        # ✅ 3. 정렬 기준 리스트 생성
+        sorted_models = df.sort_values('win_log', ascending=False)['model'].tolist()
+
+        # ✅ 4. Bar Chart
+        bar = alt.Chart(df).mark_bar(size=25).encode(
+            y=alt.Y('model:N', sort=sorted_models, title=None, axis=alt.Axis(labelFontSize=13)),
+            x=alt.X('win_log:Q', title='우승 횟수', scale=alt.Scale(domain=[0, df['win_log'].max() + 1])),
             color=alt.Color('model:N', legend=None),
             tooltip=[
                 alt.Tooltip('model:N', title='차량명'),
@@ -138,19 +152,20 @@ if st.session_state.show_intro_page:
             ]
         )
 
+        # ✅ 5. Text Chart (막대 옆 숫자 출력)
         text = alt.Chart(df).mark_text(
             align='left',
             baseline='middle',
             dx=5,
             fontSize=13
         ).encode(
-            y=alt.Y('model:N', sort='-x'),
+            y=alt.Y('model:N', sort=sorted_models),
             x='win_log:Q',
             text='win_log:Q'
         )
 
-        chart = (bar + text).properties(width=600, height=400)
-        st.markdown(f"### 💸 {selected_label} 가격대")
+        # ✅ 6. 차트 통합 및 출력
+        chart = (bar + text).properties(width=600, height=40 * len(df))
         st.altair_chart(chart, use_container_width=False)
 
     except Exception as e:
