@@ -2,11 +2,11 @@
  
  > 1️⃣ 🚀 프로젝트명 및 개요<br>
  > 2️⃣ 👥 팀 소개<br>
- > 3️⃣ 🎮 게임 사용설명서<br>
- > 4️⃣ 📚 수집 데이터 설명<br>
- > 5️⃣ 🛠 기술 스택<br>
- > 6️⃣ 📊 ERD (Entity Relationship Diagram)<br>
- > 7️⃣ 📋 테이블 명세<br>
+ > 3️⃣ 🎮 기술 스택<br>
+ > 4️⃣ 📚 ERD (Entity Relationship Diagram)<br>
+ > 5️⃣ 🛠 테이블 명세<br>기술 스택<br>
+ > 6️⃣ 📊 수집 데이터 설명<br>
+ > 7️⃣ 📋 게임 사용설명서<br>
  > 9️⃣ 💭 한줄 회고
  
  
@@ -63,7 +63,7 @@
  - **프론트엔드:** Python, Streamlit
  - **백엔드:** Python, Mysql(db)
  - **형상관리:** GitHub
- - **개발도구:** Vscode, Mysql, SourceTree
+ - **개발도구:** Vscode, Mysql, SourceTree, Figma
  ---
  # 🌆 UI설계 (Figma)
  <img width="1146" alt="Image" src="https://github.com/user-attachments/assets/509b29cb-ec18-4fd3-a0eb-124aa51d3a4f" />
