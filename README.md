@@ -57,7 +57,7 @@
 </table>
 
 ---
-##  🎮 게임 사용설명서
+#  🎮 게임 사용설명서
 
 ✨Step 1. <br>
 월드컵 사이트(url: )에 접속하신 후, 게임을 시작하려면 가장 "Game Start" 버튼을 클릭해주세요!<br>
@@ -83,7 +83,7 @@
 
 ---
 
-## 📚 수집 데이터 설명
+# 📚 수집 데이터 설명
 
 본 프로젝트에서 사용한 데이터 및 참고 자료는 다음과 같습니다:
 
@@ -101,11 +101,11 @@
 - **형상관리:** GitHub
 - **개발도구:** Vscode, Mysql, SourceTree
 ---
-## 🌆 UI설계 (Figma)
+# 🌆 UI설계 (Figma)
 <img width="1146" alt="Image" src="https://github.com/user-attachments/assets/509b29cb-ec18-4fd3-a0eb-124aa51d3a4f" />
 
 
-## 📊 ERD (Entity Relationship Diagram)
+# 📊 ERD (Entity Relationship Diagram)
 
 
 <img width="341" alt="Image" src="https://github.com/user-attachments/assets/baf231ae-d294-4e2a-8d15-86c6f50f2c4f" />
@@ -114,14 +114,16 @@
 ---
 
 
-## 📋 테이블 명세
+# 📋 테이블 명세
 <img width="814" alt="Image" src="https://github.com/user-attachments/assets/016acaf1-31fb-4002-8c68-8cfe39e94ea1" />
 <img width="816" alt="Image" src="https://github.com/user-attachments/assets/e23a6894-14e4-484b-af7c-074d628d5317" />
 
 
 
-## 💭 한줄 회고
-- **강지윤:** 최최최최최최최최최최최최최종_찐최종.py
+# 💭 한줄 회고
+- **강지윤:** 이번 프로젝트를 한줄로 표현하자면, "최최최최최최최최최최최최최종_찐최종.py"입니다. <br>
+              코드를 수정하다 수정의 늪에 빠져 헤어나오는데 한참 걸렸습니다 호호호<br>
+              그치만, 마법사 같은 팀원분들이 늪에서 구해주신 덕분에 잘 마무리할 수 있었습니다. 감사합니다~
 - **모지호:** 구내식당이 너무 맛있어서 하루하루 행복합니다.
 - **전진혁:** html? git? RAM? master(.env)
 - **홍성의:** 
