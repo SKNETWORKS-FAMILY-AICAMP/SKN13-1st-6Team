@@ -56,7 +56,44 @@
      </td>
    </thead>
  </table>
+ ---
+# 🛠 기술 스택
+ - **프론트엔드:** Python, Streamlit
+ - **백엔드:** Python, Mysql(db)
+ - **형상관리:** GitHub
+ - **개발도구:** Vscode, Mysql, SourceTree
+ ---
+ # 🌆 UI설계 (Figma)
+ <img width="1146" alt="Image" src="https://github.com/user-attachments/assets/509b29cb-ec18-4fd3-a0eb-124aa51d3a4f" />
  
+ 
+ # 📊 ERD (Entity Relationship Diagram)
+ 
+ 
+ <img width="341" alt="Image" src="https://github.com/user-attachments/assets/baf231ae-d294-4e2a-8d15-86c6f50f2c4f" />
+ 
+ 
+ ---
+ 
+ 
+ # 📋 테이블 명세
+ <img width="814" alt="Image" src="https://github.com/user-attachments/assets/016acaf1-31fb-4002-8c68-8cfe39e94ea1" />
+ <img width="816" alt="Image" src="https://github.com/user-attachments/assets/e23a6894-14e4-484b-af7c-074d628d5317" />
+
+ ---
+ 
+ # 📚 수집 데이터 설명
+ 
+ 본 프로젝트에서 사용한 데이터 및 참고 자료는 다음과 같습니다:
+ 
+ ---
+ 
+ ### **신차 정보 데이터** 🚗
+ - **출처:** [카이즈유](https://www.carisyou.com/car/) 
+ - **수집 방법:** 위 웹사이트에서 **크롤링**을 통해 신차 **총 3897대**의 **차량ID**, **연비**, **연료타입**, **차급**, **외형**, **엔진**, **출력**, **이미지** 데이터를 가져왔습니다.
+ - **수집 목적:** 위 상세 데이터들을 수집함으로써 사용자의 폭넓은 자동차 선택 기준과 취향에 대응하고자 하였습니다.
+
+   
  ---
  #  🎮 게임 사용설명서
  
@@ -81,45 +118,7 @@
  <img width="400" alt="Image" src="https://github.com/user-attachments/assets/c3b3b736-e532-43a7-92df-a9d5b377937c" /> <img width="400" alt="Image" src="https://github.com/user-attachments/assets/6ffdbd61-0d3d-4447-a0ec-6ae7d13c4569" />
  
  
- 
  ---
- 
- # 📚 수집 데이터 설명
- 
- 본 프로젝트에서 사용한 데이터 및 참고 자료는 다음과 같습니다:
- 
- ---
- 
- ### **신차 정보 데이터** 🚗
- - **출처:** [카이즈유](https://www.carisyou.com/car/) 
- - **수집 방법:** 위 웹사이트에서 **크롤링**을 통해 신차 **총 3897대**의 **차량ID**, **연비**, **연료타입**, **차급**, **외형**, **엔진**, **출력**, **이미지** 데이터를 가져왔습니다.
- - **수집 목적:** 위 상세 데이터들을 수집함으로써 사용자의 폭넓은 자동차 선택 기준과 취향에 대응하고자 하였습니다.
- 
- 
- # 🛠 기술 스택
- - **프론트엔드:** Python, Streamlit
- - **백엔드:** Python, Mysql(db)
- - **형상관리:** GitHub
- - **개발도구:** Vscode, Mysql, SourceTree
- ---
- # 🌆 UI설계 (Figma)
- <img width="1146" alt="Image" src="https://github.com/user-attachments/assets/509b29cb-ec18-4fd3-a0eb-124aa51d3a4f" />
- 
- 
- # 📊 ERD (Entity Relationship Diagram)
- 
- 
- <img width="341" alt="Image" src="https://github.com/user-attachments/assets/baf231ae-d294-4e2a-8d15-86c6f50f2c4f" />
- 
- 
- ---
- 
- 
- # 📋 테이블 명세
- <img width="814" alt="Image" src="https://github.com/user-attachments/assets/016acaf1-31fb-4002-8c68-8cfe39e94ea1" />
- <img width="816" alt="Image" src="https://github.com/user-attachments/assets/e23a6894-14e4-484b-af7c-074d628d5317" />
- 
- 
  
  # 💭 한줄 회고
  - **강지윤:** 이번 프로젝트를 한줄로 표현하자면, "최최최최최최최최최최최최최종_찐최종.py"입니다. <br>
