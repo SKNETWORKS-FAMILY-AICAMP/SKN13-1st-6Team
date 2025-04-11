@@ -4,9 +4,9 @@
 > 2️⃣ 👥 팀 소개<br>
 > 3️⃣ 🎮 게임 사용설명서<br>
 > 4️⃣ 📚 수집 데이터 설명명<br>
-> 5️⃣ 🛠 기술 스택
-> 6️⃣ 📊 ERD (Entity Relationship Diagram)
-> 7️⃣ 📋 테이블 명세
+> 5️⃣ 🛠 기술 스택<br>
+> 6️⃣ 📊 ERD (Entity Relationship Diagram)<br>
+> 7️⃣ 📋 테이블 명세<br>
 > 9️⃣ 💭 한줄 회고
 
 
