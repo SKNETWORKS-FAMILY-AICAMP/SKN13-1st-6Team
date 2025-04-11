@@ -10,19 +10,21 @@ class DbConnection:
 
     def select_all_data(self,mode:str = "") -> list | None:
         result = ""
-        if mode == "500만원~2000만원":
-            result = "WHERE price BETWEEN 1 AND 2000"
-        elif mode == "2000만원~3000만원":
-            result = "WHERE price BETWEEN  1 AND 3000"
+
+        if mode == "0만원~3000만원":
+            result = "WHERE price BETWEEN 0 AND 3000"
         elif mode == "3000만원~5000만원":
-            result = "WHERE price BETWEEN 3000 AND 5000"
-        elif mode == "5000만원~8000만원":
-            result = "WHERE price BETWEEN 5000 AND 8000"
-        elif mode == "8000만원 이상":
-            result = "WHERE price >= 8000"
-        
-        #["500만원~2000만원", "2000만원~3000만원", "3000만원~5000만원", "5000만원~8000만원", "8000만원 이상"]
-        
+            result = "WHERE price BETWEEN  3000 AND 5000"
+        elif mode == "5000만원~7000만원":
+            result = "WHERE price BETWEEN 5000 AND 7000"
+        elif mode == "7000만원~1억원":
+            result = "WHERE price BETWEEN 7000 AND 10000"
+        elif mode == "1억원~2억원":
+            result = "WHERE price BETWEEN 10000 AND 20000"
+        elif mode == "2억원이상":
+            result = "WHERE price >= 20000"
+
+
         sql = "SELECT * FROM car_info " + result + " AND img_url IS NOT NULL AND img_url != '' "
 
         cars = []

@@ -184,8 +184,14 @@ if st.session_state.get("show_price_select", False) and "selected_price" not in 
 
     selected = st.selectbox(
         "가격 범위 선택",
-        ["500만원~2000만원", "2000만원~3000만원", "3000만원~5000만원", "5000만원~8000만원", "8000만원 이상"]
+        ["0만원~3000만원",
+        "3000만원~5000만원",
+        "5000만원~7000만원",
+        "7000만원~1억원",
+        "1억원~2억원",
+        "2억원이상"]
     )
+
     connnn = db.DbConnection() 
     res = connnn.select_all_data(selected) 
 
@@ -208,15 +214,20 @@ if st.session_state.show_dev_page:
 
     profiles = [
         {"name": "지윤", "img": "https://github.com/user-attachments/assets/719dfe50-9b45-470e-bdc6-c22a57508169", "desc": "자기소개"},
-        {"name": "지호", "img": "https://github.com/user-attachments/assets/704ffbf8-e5cb-407d-b680-d8f298a030d1", "desc": "자기소개"},
-        {"name": "진혁", "img": "https://github.com/user-attachments/assets/abe3a34e-7611-43a4-8c54-10387206ab31", "desc": "자기소개"},
-        {"name": "성의", "img": "https://github.com/user-attachments/assets/a69165a2-1064-48d6-9d63-12105fdb814c", "desc": "자기소개"},
-        {"name": "성장", "img": "https://github.com/user-attachments/assets/d9974423-da75-409f-96eb-0dfea434603a", "desc": "자기소개"},
+        {"name": "지호", "img": "https://github.com/user-attachments/assets/704ffbf8-e5cb-407d-b680-d8f298a030d1", 
+         "desc": "자기소개\nAhoj, jsem Mo Jiho.\nMám rád baseball, tenis a fotbal.\nV korejském baseballu fandím týmu Hanwha, bohužel. 😢"},
+        {"name": "진혁", "img": "https://github.com/user-attachments/assets/abe3a34e-7611-43a4-8c54-10387206ab31", 
+         "desc": "자기소개\n 안녕하세요, 진혁입니다. 전공은 화학이지만 요즘은 컴퓨터 앞에서 코드를 짜며 경기장에서 온 힘을 다해 뛰고 있습니다. 필요한 시약이나 화학 관련 궁금증 있으시면, 마치 상대 골문을 노리는 것처럼 주저하지 말고 편하게 말씀해 주세요. 언제나 최선을 다해 도와드리겠습니다!"},
+        {"name": "성의", "img": "https://github.com/user-attachments/assets/a69165a2-1064-48d6-9d63-12105fdb814c",
+         "desc": "자기소개\n Salut, j'aime beaucoup les jeux vidéo et j'y joue souvent. Merci d'avance pour les bons moments à venir !"},
+        {"name": "성장", "img": "https://github.com/user-attachments/assets/d9974423-da75-409f-96eb-0dfea434603a", 
+         "desc": "자기소개 \n Hei! Jeg heter Seongjang Choi.  På fritiden liker jeg å trene – egentlig liker jeg nesten all slags sport, bortsett fra biljard 😅  Jeg er ikke så flink, men jeg har det gøy uansett!  Jeg synes også programmering er ganske gøy.  Så hvis du har problemer med koding, bare kom og spør meg!"},
     ]
 
     for profile in profiles:
         st.image(profile["img"], width=200, caption=profile["name"])
-        st.markdown(f"**{profile['desc']}**")
+        formatted_desc = profile["desc"].replace("\n", "<br>")
+        st.markdown(f"{formatted_desc}", unsafe_allow_html=True)
         st.markdown("---")  # 구분선
 
     if st.button("🏠 홈으로 돌아가기"):
@@ -225,6 +236,7 @@ if st.session_state.show_dev_page:
         st.rerun()
 
     st.stop()
+
 
 
 #✅ Step 4: 월드컵 시작 전 초기화
